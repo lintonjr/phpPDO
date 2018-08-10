@@ -8,3 +8,7 @@ require_once "ServiceProduct.php";
 // phpinfo();
 
 $db = new Conn("localhost", "test_oo", "root", "root");
+$product = new Product;
+$service = new ServiceProduct($db, $product);
+
+print_r($service->index());

@@ -13,7 +13,11 @@ class ServiceProduct
 
     public function index()
     {
-
+        $query = "SELECT * FROM `products`";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
     }
 
     public function save()
